@@ -5,6 +5,9 @@ Once you have an account with API access, you'll want your client ID and Secret 
 your bookstack website link. Such as https://bookstack.NAMEHERE.internal/api/
 All 3 of these will be used in a JSON file. 
 
-**Current Features:**
-Return all book names in your Bookstack Collection
+**Current Features:**<br>
+Return all book names in your Bookstack Collection<br>
+Return all book IDs in your Bookstack Collection<br>
+Return a specific book ID with a given book name in your Bookstack Collection<br>
+Return a specific book name with a given book ID in your Bookstack Collection<br>
 
