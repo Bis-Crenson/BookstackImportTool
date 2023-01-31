@@ -10,4 +10,4 @@ Return all book names in your Bookstack Collection<br>
 Return all book IDs in your Bookstack Collection<br>
 Return a specific book ID with a given book name in your Bookstack Collection<br>
 Return a specific book name with a given book ID in your Bookstack Collection<br>
-
+Import a html page with a given import path
