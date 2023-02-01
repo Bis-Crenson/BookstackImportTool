@@ -81,13 +81,11 @@ def find_specific_book(book_ID):
     return "-1" #Error, no book ID find
 
 
+
+"""
+Import Scripts
+"""
 #This code will import a specific HTML file into a bookstack book of your choosing
-#For multiple uploads, you can use this function with a for loop and a directory loop.
-#I recommend looking up how to traverse a directory/folder and getting the file names
-#You will need the name of the book for insertion.
-#It's really easy :-)
-# os.chdir(rf'C:PATH')
-# for file in glob.glob("*.html"): #Traverse files in directory, file will be the name of every file.
 def import_html_into_book(html_file_path, name_of_page, book_name):
     payload = json.dumps({
         "name": name_of_page, #Name of your lovely file
@@ -100,13 +98,24 @@ def import_html_into_book(html_file_path, name_of_page, book_name):
     }
     response = requests.request("POST", f'{cred["url"]}/pages', headers=headers, data=payload, verify=False) #Attempt creation of the page
 
-
-
-
-
-
-
-
+#For multiple uploads, you can use this function with a for loop and a directory loop.
+# os.chdir(rf'C:PATH')
+# for file in glob.glob("*.html"): #Traverse files in directory, file will be the name of every file.
+# For multiple uploads, you can use this function with a directory loop.
+def import_html_directory_into_book(directory_path, book_name):
+    os.chdir(directory_path) #Change the current directory path
+    for filename in glob.glob("*.html"): #Go through each file in a given directory that has a HTML tag
+        payload = json.dumps({
+            "name": filename.replace(".html", ""),  # Name of your lovely file, remove the html tag from the name
+            "book_id": int(find_specific_book_ID(book_name)),  # Convert to an int
+            "html": open(rf"{directory_path}\{filename}", 'r', encoding='utf-8').read()  # Insert HTML here
+        })
+        headers = {
+            'Authorization': f'Token {cred["id"]}:{cred["secret"]}',
+            'Content-Type': 'application/json'
+        }
+        response = requests.request("POST", f'{cred["url"]}/pages', headers=headers, data=payload,
+                                    verify=False)  # Attempt creation of the page
 
 #Testing purposes
 # print(find_all_books()) #List
@@ -116,4 +125,5 @@ def import_html_into_book(html_file_path, name_of_page, book_name):
 # print(find_specific_book(100)) #Bob
 # print(find_specific_book(-1)) #"-1""
 #import_html_into_book(r"C:\Users\chris\PycharmProjects\BookstackImportTool\testpage.html", "test page", "Chris Playground") #Page uploaded
+#import_html_directory_into_book(r"C:\Users\chris\Documents\BookstackTesting", "Chris Playground") #Page uploaded
 
