@@ -6,6 +6,11 @@ your bookstack website link. Such as https://bookstack.NAMEHERE.internal/api/
 All 3 of these will be used in a JSON file. <br>
 If you need help, watch this Youtube chapter(https://youtu.be/nEaRvJNLI7M?t=332) about setting up the API token, the JSON file is located in the respository 
 
+**REQUIREMENTS** <br>
+Python 3.6+ <br>
+pip install json  <br>
+
+
 **Current Features:**<br>
 Return all book names in your Bookstack Collection<br>
 Return all book IDs in your Bookstack Collection<br>
