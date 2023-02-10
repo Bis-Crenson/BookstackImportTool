@@ -19,3 +19,5 @@ Return a specific book name with a given book ID in your Bookstack Collection<br
 Import a html page with a given import path<br>
 import all HTML pages within a directory to a specific book<br>
 Every import will have their local images carry over<br>
+
+Just use any of the functions included once you get the credentials needed for the tool to work. I'll add more over time! <br>
