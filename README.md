@@ -16,5 +16,6 @@ Return all book names in your Bookstack Collection<br>
 Return all book IDs in your Bookstack Collection<br>
 Return a specific book ID with a given book name in your Bookstack Collection<br>
 Return a specific book name with a given book ID in your Bookstack Collection<br>
-Import a html page with a given import path
-import all HTML pages within a directory to a specific book
+Import a html page with a given import path<br>
+import all HTML pages within a directory to a specific book<br>
+Every import will have their local images carry over<br>
