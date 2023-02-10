@@ -9,6 +9,7 @@ If you need help, watch this Youtube chapter(https://youtu.be/nEaRvJNLI7M?t=332)
 **REQUIREMENTS** <br>
 Python 3.6+ <br>
 pip install json  <br>
+pip install bs <br>
 
 
 **Current Features:**<br>
